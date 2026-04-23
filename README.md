@@ -53,7 +53,7 @@
 
 | Canvas | Colors | Brush Size | Background |
 |:------:|:------:|:----------:|:----------:|
-| <img src="screenshots/canvas.jpeg" width="160"/> | <img src="screenshots/colors.jpeg" width="160"/> | <img src="screenshots/brush.jpeg" width="160"/> | <img src="screenshots/undo_redo.jpeg" width="160"/> |
+| <img src="screenshots/canvas.jpeg" width="160"/> | <img src="screenshots/colors.jpeg" width="160"/> | <img src="screenshots/brush.jpeg" width="160"/> | <img src="screenshots/gallery.jpeg" width="160"/> |
 
 </div>
 
