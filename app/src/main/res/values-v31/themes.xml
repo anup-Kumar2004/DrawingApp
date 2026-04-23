@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Theme.DrawingApp" parent="Base.Theme.DrawingApp">
+
+        <!-- Splash screen (Android 12+) -->
+        <item name="android:windowSplashScreenBackground">@color/white</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+
+    </style>
+
+</resources>
