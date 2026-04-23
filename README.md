@@ -26,7 +26,7 @@
 
 ## 📲 &nbsp; Get the App
 
-*Tapto get the apk — works on any Android phone*
+*Tap to get the apk — works on any Android phone*
 
 <br/>
 
@@ -51,7 +51,7 @@
 
 <div align="center">
 
-| Canvas | Colors | Brush Size | Background |
+| Canvas | Color Picker Wheel | Brush Size | Background Image Picker From Gallery |
 |:------:|:------:|:----------:|:----------:|
 | <img src="screenshots/canvas.jpeg" width="160"/> | <img src="screenshots/colors.jpeg" width="160"/> | <img src="screenshots/brush.jpeg" width="160"/> | <img src="screenshots/gallery.jpeg" width="160"/> |
 
@@ -208,10 +208,10 @@ implementation("com.google.android.material:material:1.11.0")
 
 ---
 
-Made with ❤️ by **Anup Kumar**
+Made by **Anup Kumar**
 
 [![GitHub](https://img.shields.io/badge/GitHub-anup--Kumar2004-181717?style=flat-square&logo=github)](https://github.com/anup-Kumar2004)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/YOUR_LINKEDIN)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/anup-kumar-03b0b1354)
 
 *Drop a ⭐ if this project impressed you!*
 
