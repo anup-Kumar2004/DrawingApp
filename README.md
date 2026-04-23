@@ -25,7 +25,7 @@
 
 <br/>
 
-[![Download APK](https://img.shields.io/badge/⬇️%20DOWNLOAD%20APK-Click%20Here%20to%20Install-2ea44f?style=for-the-badge&logoColor=white)](https://github.com/YOUR_USERNAME/DrawingApp/releases/latest/download/app-release.apk)
+[![Download APK](https://img.shields.io/badge/⬇️%20DOWNLOAD%20APK-Click%20Here%20to%20Install-2ea44f?style=for-the-badge&logoColor=white)](https://github.com/anup-Kumar2004/DrawingApp/releases/latest/download/app-release.apk)
 
 <br/>
 
