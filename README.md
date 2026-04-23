@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="screenshots/banner.jpeg" alt="DrawingApp Banner" width="100%"/>
+<img src="screenshots/banner.png" alt="DrawingApp Banner" width="100%"/>
 
 <br/>
 
@@ -53,7 +53,7 @@
 
 | Canvas | Colors | Brush Size | Background |
 |:------:|:------:|:----------:|:----------:|
-| <img src="screenshots/canvas.jpeg" width="160"/> | <img src="screenshots/colors.jpeg" width="160"/> | <img src="screenshots/brush.jpeg" width="160"/> | <img src="screenshots/gallery.jpeg" width="160"/> |
+| <img src="screenshots/canvas.jpg" width="160"/> | <img src="screenshots/colors.jpg" width="160"/> | <img src="screenshots/brush.jpg" width="160"/> | <img src="screenshots/gallery.jpg" width="160"/> |
 
 </div>
 
