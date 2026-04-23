@@ -1,254 +1,218 @@
 <div align="center">
 
-# 🎨 DrawingApp
-
-### *A smooth, interactive drawing experience — built for creativity on Android*
-
-[![Android](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://android.com)
-[![Kotlin](https://img.shields.io/badge/Language-Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org)
-[![API](https://img.shields.io/badge/Min%20API-21%20(Android%205)-orange?style=for-the-badge)](https://developer.android.com)
-[![Architecture](https://img.shields.io/badge/Architecture-Custom%20View-blue?style=for-the-badge)](https://developer.android.com)
+<img src="screenshots/banner.jpeg" alt="DrawingApp Banner" width="100%"/>
 
 <br/>
 
-> *A lightweight drawing app with real-time strokes, color selection, and undo/redo support*
+# ✏️ &nbsp; Drawing App
+
+**Draw. Color. Create. Save.**
+
+*A zero-dependency, fully custom Android drawing canvas — built from scratch using Kotlin and the Android Canvas API.*
 
 <br/>
 
----
-
-## 📥 Download & Install
-
-### Try the app directly on your Android device!
-
-<br/>
-
-[![Download APK](https://img.shields.io/badge/⬇️%20DOWNLOAD%20APK-Click%20Here%20to%20Install-2ea44f?style=for-the-badge&logoColor=white)](https://github.com/anup-Kumar2004/DrawingApp/releases/latest/download/app-release.apk)
-
-<br/>
-
-> ⚠️ You may need to allow installation from unknown sources.
-> Go to **Settings → Security → Install unknown apps**
-
-<br/>
-
-| Step | Action |
-|:----:|--------|
-| **1** | 📲 Tap the **Download APK** button above on your Android phone |
-| **2** | 📂 Open the downloaded file from your notifications or Downloads folder |
-| **3** | ✅ Tap **Install** when prompted |
-| **4** | 🎨 Start drawing! |
-
-<br/>
-
-**Requirements:** Android 5.0 (API 21) or higher · Lightweight · No account needed
-
----
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
+![Min SDK](https://img.shields.io/badge/Min%20SDK-21-orange?style=flat-square)
+![No API Key](https://img.shields.io/badge/API%20Key-Not%20Required-brightgreen?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
 </div>
 
-## 📱 Screenshots
-
-> *Add your screenshots here by replacing the placeholder paths below*
+---
 
 <div align="center">
 
-| Drawing Canvas | Color Selection | Brush Size Control | Undo / Redo |
-|:--------------:|:---------------:|:------------------:|:-----------:|
+## 📲 &nbsp; Get the App
+
+*Scan or tap — works on any Android phone*
+
+<br/>
+
+[![GET APK](https://img.shields.io/badge/──────────%20⬇%20%20DOWNLOAD%20APK%20v1.0%20%20⬇%20──────────-28a745?style=for-the-badge&logo=android&logoColor=white)](https://github.com/anup-Kumar2004/DrawingApp/releases/latest/download/app-release.apk)
+
+<br/>
+
+```
+① Tap the button above on your Android phone
+② Open the downloaded file from your notifications  
+③ If prompted → Settings → Security → Allow unknown sources
+④ Tap Install → Open → Start creating 🎨
+```
+
+*Requires Android 5.0 or above · Size ~4MB · No sign-up needed*
+
+</div>
+
+---
+
+## 📸 &nbsp; Screenshots
+
+<div align="center">
+
+| Canvas | Colors | Brush Size | Background |
+|:------:|:------:|:----------:|:----------:|
 | <img src="screenshots/canvas.jpeg" width="160"/> | <img src="screenshots/colors.jpeg" width="160"/> | <img src="screenshots/brush.jpeg" width="160"/> | <img src="screenshots/undo_redo.jpeg" width="160"/> |
 
 </div>
 
-<br/>
+---
+
+## 💡 &nbsp; What Makes This Different
+
+> Most drawing apps use third-party canvas libraries.
+> **This one doesn't.**
+
+Every stroke you draw goes through a custom `DrawingView` built directly on Android's `Canvas`, `Paint`, and `Path` APIs — no shortcuts, no wrappers.
+
+```kotlin
+// Every finger movement creates a real Path — tracked live
+MotionEvent.ACTION_MOVE -> {
+    currentPath.lineTo(x, y)
+    invalidate() // re-renders canvas in real time
+}
+
+// On finger lift — snapshot the stroke with its paint settings
+MotionEvent.ACTION_UP -> {
+    strokes.add(Stroke(currentPath, Paint(drawPaint)))
+}
+```
 
 ---
 
-## ✨ Features
+## ✨ &nbsp; Features
 
-<table>
-<tr>
-<td width="50%">
-
-### 🎨 Drawing Experience
-- Smooth real-time drawing on canvas
-- Custom **Path-based rendering**
-- Anti-aliased strokes for clean output
-- Supports continuous finger gestures
-
-</td>
-<td width="50%">
-
-### 🌈 Color Selection
-- Predefined colors (Pink, Red, Green, Blue)
-- Custom color picker with full spectrum
-- Visual selection indicator
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### ✏️ Brush Control
-- Adjustable brush size via **SeekBar dialog**
-- Dynamic stroke width updates in real-time
-
-</td>
-<td width="50%">
-
-### 🔁 Undo / Redo
-- Multi-step undo support
-- Redo previously undone strokes
-- Efficient stroke stack handling
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🖼️ Background Support
-- Set image as drawing background
-- Draw on top of gallery images
-
-</td>
-<td width="50%">
-
-### ⚡ Lightweight & Fast
-- No heavy dependencies
-- Optimized drawing performance
-- Runs smoothly on low-end devices
-
-</td>
-</tr>
-</table>
-
-<br/>
+| | Feature | Details |
+|--|---------|---------|
+| 🖌️ | **Freehand Drawing** | Smooth anti-aliased strokes via custom `Path` rendering |
+| 🎨 | **Color Palette** | Pink, Red, Green, Blue + full-spectrum custom color picker |
+| 📏 | **Brush Size** | SeekBar-based bottom sheet — live circle preview updates as you drag |
+| ↩️ | **Undo** | Pops the last stroke off a `MutableList<Stroke>` stack |
+| ↪️ | **Redo** | Re-applies strokes from a separate undone strokes stack |
+| 🖼️ | **Background Image** | Pick any photo from gallery and draw on top of it |
+| 🗑️ | **Remove Background** | Confirmation dialog before clearing the background |
+| 💾 | **Save to Gallery** | Flattens canvas + background into a `Bitmap` → saves to `Pictures/DrawingApp` |
+| 🌈 | **Custom Color Picker** | Powered by Skydoves ColorPickerView with alpha + brightness sliders |
+| 📱 | **Edge-to-Edge UI** | Full screen canvas with `enableEdgeToEdge()` |
 
 ---
 
-## 🏗️ Tech Stack
+## 🧱 &nbsp; How It's Built
 
-| Category | Technology |
-|----------|-----------|
-| **Language** | Kotlin |
-| **UI** | XML Layouts, ConstraintLayout |
-| **Custom Drawing** | Canvas, Paint, Path |
-| **Architecture** | Custom View-based approach |
-| **Dialogs** | Android Dialog + SeekBar |
-| **Color Picker** | Skydoves ColorPickerView |
+### The Core — `DrawingView.kt`
 
-<br/>
+The entire drawing engine is a single custom `View` subclass. No libraries, no delegates.
+
+```
+Finger Down  →  new Path()  →  moveTo(x, y)
+Finger Move  →  lineTo(x, y)  →  invalidate()
+Finger Up    →  Stroke(path, paint) saved to list
+```
+
+Each `Stroke` is a data class holding a **snapshot** of the path and paint at the time of drawing:
+
+```kotlin
+data class Stroke(val path: Path, val paint: Paint)
+```
+
+This makes undo/redo trivially simple — just move items between two lists.
+
+### The Undo/Redo System
+
+```
+strokes list          ←→         undoneStrokes list
+[s1, s2, s3]   ──undo──▶   [s1, s2]  +  undone:[s3]
+[s1, s2]       ──redo───▶   [s1, s2, s3]  +  undone:[]
+```
+
+New stroke drawn? `undoneStrokes.clear()` — redo history is wiped, just like any pro drawing tool.
+
+### Gallery & Permissions
+
+```
+Android 13+  →  Photo Picker API  (zero permissions needed)
+Android 12-  →  READ_EXTERNAL_STORAGE permission → legacy picker
+```
+
+### Saving
+
+Draws the entire `FrameLayout` (background image + strokes) onto a `Bitmap` using `frameLayout.draw(canvas)`, then writes it to `MediaStore` — no file path juggling, works on all modern Android versions.
 
 ---
 
-## 🗂️ Project Structure
+## 🗂️ &nbsp; Project Structure
 
 ```
 app/src/main/
 │
 ├── java/com/example/drawingapp/
-│   ├── DrawingView.kt               # Custom View — canvas, paint, path logic
-│   └── MainActivity.kt              # Main screen — toolbar, color, brush controls
+│   ├── DrawingView.kt        ← Custom canvas View (the heart of the app)
+│   └── MainActivity.kt       ← UI wiring, toolbar, color, brush, save logic
 │
 ├── res/
 │   ├── layout/
-│   │   ├── activity_main.xml
-│   │   └── dialog_brush_size.xml
+│   │   ├── activity_main.xml         ← ConstraintLayout: canvas + palette + toolbar
+│   │   └── dialog_brush_size.xml     ← Bottom sheet with SeekBar + live preview
 │   │
 │   ├── drawable/
-│   │   ├── circle_* files           # Color circle drawables
-│   │   ├── circle_selector.xml      # Selection state drawable
-│   │   ├── color_wheel.png
-│   │   └── icons/                   # undo, redo, save, gallery icons
+│   │   ├── circle_pink/red/green/blue.xml   ← Color circle shapes
+│   │   ├── circle_selector.xml              ← Selected state ring overlay
+│   │   ├── circle_image_mask.xml            ← Circular mask for color wheel
+│   │   ├── color_wheel.png                  ← Custom color picker thumbnail
+│   │   ├── bg_canvas.xml                    ← Canvas background (rounded card)
+│   │   └── icons/                           ← brush, save, gallery, undo, redo, delete
 │   │
-│   ├── values/
-│   │   ├── colors.xml
-│   │   ├── strings.xml
-│   │   └── themes.xml
-│   │
-│   └── xml/
-│       ├── backup_rules.xml
-│       └── data_extraction_rules.xml
+│   └── values/
+│       ├── colors.xml
+│       ├── strings.xml
+│       └── themes.xml
 │
 └── AndroidManifest.xml
 ```
 
-<br/>
-
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Android Studio **Hedgehog** or later
-- Android device / emulator running **API 21+**
-
-### Installation
+## 🚀 &nbsp; Run It Yourself
 
 ```bash
-# 1. Clone the repository
+# Clone
 git clone https://github.com/anup-Kumar2004/DrawingApp.git
 
-# 2. Open in Android Studio
-# File → Open → select the cloned folder
+# Open in Android Studio
+# File → Open → select folder → let Gradle sync
 
-# 3. Let Gradle sync complete
-
-# 4. Run on your device or emulator
-# Click ▶ Run or press Shift+F10
+# Run
+# Press Shift+F10 or click ▶
 ```
 
-<br/>
+**No API keys. No config. Just clone and run.**
 
 ---
 
-## 📦 Dependencies
+## 📦 &nbsp; Dependencies
 
 ```kotlin
-// Color Picker
+// Full-spectrum color picker with alpha + brightness sliders
 implementation("com.github.skydoves:colorpickerview:2.3.0")
 
-// Material 3
+// Material 3 components (BottomSheetDialog, etc.)
 implementation("com.google.android.material:material:1.11.0")
 ```
 
-<br/>
+*Everything else — Canvas, Paint, Path, MediaStore, MotionEvent — is pure Android SDK.*
 
 ---
-
-## 🧠 Architecture Overview
-
-```
-User Touch → MotionEvent → Path → Canvas Draw
-                               ↓
-                       Stored as Stroke
-                               ↓
-                   Undo / Redo Stack System
-                               ↓
-                       View.invalidate()
-```
-
-<br/>
-
----
-
-## 🙋‍♂️ About the Developer
 
 <div align="center">
 
-Built with ❤️ by **Anup Kumar**
+---
 
-*This project demonstrates custom Android View development including:*
-*Canvas drawing · Paint & Path API · gesture handling · undo/redo stack logic*
+Made with ❤️ by **Anup Kumar**
 
-<br/>
+[![GitHub](https://img.shields.io/badge/GitHub-anup--Kumar2004-181717?style=flat-square&logo=github)](https://github.com/anup-Kumar2004)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/YOUR_LINKEDIN)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/anup-Kumar2004)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/YOUR_LINKEDIN)
-
-<br/>
-
-*If you found this project helpful or interesting, please consider giving it a ⭐*
-
-**© 2026 DrawingApp — Built with Kotlin & ☕**
+*Drop a ⭐ if this project impressed you!*
 
 </div>
